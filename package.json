@@ -1,0 +1,23 @@
+{
+  "name": "shakespeare-dataset",
+  "version": "1.0.0",
+  "description": "all his complete works, plays, sonnets and poems",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
+    "build:static": "tsc && node dist/generate-static.js",
+    "generate": "tsx src/generate-static.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "@types/node": "^24.3.3",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}

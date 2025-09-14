@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete Works of William Shakespeare</title>
+    <meta name="description" content="Browse and read the complete works of William Shakespeare, including all plays, sonnets, and poems.">
+    
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        font-style: italic;
+      }
+
+      .works-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem 0;
+      }
+
+      .work-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .work-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      }
+
+      .work-title {
+        color: #2c3e50;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .work-type {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        font-style: italic;
+      }
+
+      .back-link {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-bottom: 2rem;
+        transition: background 0.3s ease;
+      }
+
+      .back-link:hover {
+        background: #2980b9;
+      }
+
+      .text-content {
+        background: white;
+        padding: 3rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        font-size: 1.1rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      .search-box {
+        margin: 2rem 0;
+        padding: 1rem;
+        width: 100%;
+        font-size: 1.1rem;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        transition: border-color 0.3s ease;
+      }
+
+      .search-box:focus {
+        outline: none;
+        border-color: #3498db;
+      }
+
+      .stats {
+        text-align: center;
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+
+      .stats-number {
+        font-size: 2rem;
+        color: #2c3e50;
+        font-weight: bold;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .works-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .text-content {
+          padding: 1.5rem;
+          font-size: 1rem;
+        }
+      }
+    </style>
+  
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The Complete Works of William Shakespeare</h1>
+            <p class="subtitle">All plays, sonnets, and poems in one place</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stats-number">42</div>
+            <div>Complete Works Available</div>
+        </div>
+
+        <input type="text" class="search-box" id="searchBox" placeholder="Search for a work..." />
+
+        <div class="works-grid" id="worksGrid">
+            
+                <a href="works/a-midsummer-nights-dream.html" class="work-card" data-title="a midsummer nights dream">
+                    <h2 class="work-title">A Midsummer Nights Dream</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/alls-well-that-ends-well.html" class="work-card" data-title="alls well that ends well">
+                    <h2 class="work-title">Alls Well That Ends Well</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/antony-and-cleopatra.html" class="work-card" data-title="antony and cleopatra">
+                    <h2 class="work-title">Antony And Cleopatra</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/as-you-like-it.html" class="work-card" data-title="as you like it">
+                    <h2 class="work-title">As You Like It</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/coriolanus.html" class="work-card" data-title="coriolanus">
+                    <h2 class="work-title">Coriolanus</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/cymbeline.html" class="work-card" data-title="cymbeline">
+                    <h2 class="work-title">Cymbeline</h2>
+                    <p class="work-type">Romance</p>
+                </a>
+            
+                <a href="works/hamlet.html" class="work-card" data-title="hamlet">
+                    <h2 class="work-title">Hamlet</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/henry-iv-part-1.html" class="work-card" data-title="henry iv part 1">
+                    <h2 class="work-title">Henry Iv Part 1</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/henry-iv-part-2.html" class="work-card" data-title="henry iv part 2">
+                    <h2 class="work-title">Henry Iv Part 2</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/henry-v.html" class="work-card" data-title="henry v">
+                    <h2 class="work-title">Henry V</h2>
+                    <p class="work-type">History</p>
+                </a>
+            
+                <a href="works/henry-vi-part-1.html" class="work-card" data-title="henry vi part 1">
+                    <h2 class="work-title">Henry Vi Part 1</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/henry-vi-part-2.html" class="work-card" data-title="henry vi part 2">
+                    <h2 class="work-title">Henry Vi Part 2</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/henry-vi-part-3.html" class="work-card" data-title="henry vi part 3">
+                    <h2 class="work-title">Henry Vi Part 3</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/henry-viii.html" class="work-card" data-title="henry viii">
+                    <h2 class="work-title">Henry Viii</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/julius-caesar.html" class="work-card" data-title="julius caesar">
+                    <h2 class="work-title">Julius Caesar</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/king-john.html" class="work-card" data-title="king john">
+                    <h2 class="work-title">King John</h2>
+                    <p class="work-type">History</p>
+                </a>
+            
+                <a href="works/king-lear.html" class="work-card" data-title="king lear">
+                    <h2 class="work-title">King Lear</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/loves-labors-lost.html" class="work-card" data-title="loves labors lost">
+                    <h2 class="work-title">Loves Labors Lost</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/lucrece.html" class="work-card" data-title="lucrece">
+                    <h2 class="work-title">Lucrece</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/macbeth.html" class="work-card" data-title="macbeth">
+                    <h2 class="work-title">Macbeth</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/measure-for-measure.html" class="work-card" data-title="measure for measure">
+                    <h2 class="work-title">Measure For Measure</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/much-ado-about-nothing.html" class="work-card" data-title="much ado about nothing">
+                    <h2 class="work-title">Much Ado About Nothing</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/othello.html" class="work-card" data-title="othello">
+                    <h2 class="work-title">Othello</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/pericles.html" class="work-card" data-title="pericles">
+                    <h2 class="work-title">Pericles</h2>
+                    <p class="work-type">Romance</p>
+                </a>
+            
+                <a href="works/richard-ii.html" class="work-card" data-title="richard ii">
+                    <h2 class="work-title">Richard Ii</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/richard-iii.html" class="work-card" data-title="richard iii">
+                    <h2 class="work-title">Richard Iii</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/romeo-and-juliet.html" class="work-card" data-title="romeo and juliet">
+                    <h2 class="work-title">Romeo And Juliet</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/shakespeares-sonnets.html" class="work-card" data-title="shakespeares sonnets">
+                    <h2 class="work-title">Shakespeares Sonnets</h2>
+                    <p class="work-type">Poetry</p>
+                </a>
+            
+                <a href="works/the-comedy-of-errors.html" class="work-card" data-title="the comedy of errors">
+                    <h2 class="work-title">The Comedy Of Errors</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/the-merchant-of-venice.html" class="work-card" data-title="the merchant of venice">
+                    <h2 class="work-title">The Merchant Of Venice</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/the-merry-wives-of-windsor.html" class="work-card" data-title="the merry wives of windsor">
+                    <h2 class="work-title">The Merry Wives Of Windsor</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/the-phoenix-and-turtle.html" class="work-card" data-title="the phoenix and turtle">
+                    <h2 class="work-title">The Phoenix And Turtle</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/the-taming-of-the-shrew.html" class="work-card" data-title="the taming of the shrew">
+                    <h2 class="work-title">The Taming Of The Shrew</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/the-tempest.html" class="work-card" data-title="the tempest">
+                    <h2 class="work-title">The Tempest</h2>
+                    <p class="work-type">Romance</p>
+                </a>
+            
+                <a href="works/the-two-gentlemen-of-verona.html" class="work-card" data-title="the two gentlemen of verona">
+                    <h2 class="work-title">The Two Gentlemen Of Verona</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/the-two-noble-kinsmen.html" class="work-card" data-title="the two noble kinsmen">
+                    <h2 class="work-title">The Two Noble Kinsmen</h2>
+                    <p class="work-type">Romance</p>
+                </a>
+            
+                <a href="works/the-winters-tale.html" class="work-card" data-title="the winters tale">
+                    <h2 class="work-title">The Winters Tale</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/timon-of-athens.html" class="work-card" data-title="timon of athens">
+                    <h2 class="work-title">Timon Of Athens</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/titus-andronicus.html" class="work-card" data-title="titus andronicus">
+                    <h2 class="work-title">Titus Andronicus</h2>
+                    <p class="work-type">Tragedy</p>
+                </a>
+            
+                <a href="works/troilus-and-cressida.html" class="work-card" data-title="troilus and cressida">
+                    <h2 class="work-title">Troilus And Cressida</h2>
+                    <p class="work-type">Other</p>
+                </a>
+            
+                <a href="works/twelfth-night.html" class="work-card" data-title="twelfth night">
+                    <h2 class="work-title">Twelfth Night</h2>
+                    <p class="work-type">Comedy</p>
+                </a>
+            
+                <a href="works/venus-and-adonis.html" class="work-card" data-title="venus and adonis">
+                    <h2 class="work-title">Venus And Adonis</h2>
+                    <p class="work-type">Poetry</p>
+                </a>
+            
+        </div>
+    </div>
+
+    <script>
+        const searchBox = document.getElementById('searchBox');
+        const cards = document.querySelectorAll('.work-card');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            cards.forEach(card => {
+                const title = card.dataset.title;
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
